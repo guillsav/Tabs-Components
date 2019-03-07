@@ -9,10 +9,8 @@ class TabLink {
     this.itemElement = document.querySelector(
       `.tabs-item[data-tab= '${this.element.dataset.tab}']`
     );
-
-    this.tabItem = this.itemElement;
     // Using the Item element, create a new instance of the TabItem class
-    this.tabItem = new TabItem(this.tabItem);
+    this.itemElement = new TabItem(this.itemElement);
     // Add a click event listener on this instance, calling the select method on click
     this.element.addEventListener('click', () => this.select());
   }
@@ -25,9 +23,9 @@ class TabLink {
       link.classList.remove('tabs-link-selected')
     );
     // Add a class named "tabs-link-selected" to this link
-    this.element.classList.add('tabs-link-selected');
+    this.element.classList.toggle('tabs-link-selected');
     // Call the select method on the item associated with this link
-    this.tabItem.select();
+    this.itemElement.select();
   }
 }
 
@@ -45,7 +43,7 @@ class TabItem {
       item.classList.remove('tabs-item-selected')
     );
     // Add a class named "tabs-item-selected" to this element
-    this.element.classList.add('tabs-item-selected');
+    this.element.classList.toggle('tabs-item-selected');
   }
 }
 
