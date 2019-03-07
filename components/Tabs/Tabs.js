@@ -44,6 +44,17 @@ class TabItem {
     );
     // Add a class named "tabs-item-selected" to this element
     this.element.classList.toggle('tabs-item-selected');
+
+    TweenMax.from(this.element, 1.2, {
+      ease: Bounce.easeOut,
+      marginLeft: '100px',
+      opacity: '0'
+    });
+    TweenMax.to(this.element, 1.2, {
+      ease: Bounce.easeOut,
+      marginLeft: '0',
+      opacity: '1'
+    });
   }
 }
 

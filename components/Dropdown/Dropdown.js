@@ -15,7 +15,10 @@ class Dropdown {
 
   toggleContent() {
     // Toggle the ".dropdown-hidden" class off and on
-    this.content.classList.toggle('dropdown-hidden');
+    // this.content.classList.toggle('dropdown-hidden');
+    $(this.content).toggleClass('dropdown-hidden', 0.9, 'linear');
+    TweenMax.from(this.content, 0.3, {height: '0'});
+    TweenMax.to(this.content, 0.3, {height: '161px'});
   }
 }
 
