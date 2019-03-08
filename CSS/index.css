@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 62.5%;
 }
 .dropdown {
   z-index: 2;
@@ -10,10 +11,11 @@
   cursor: pointer;
 }
 .dropdown .dropdown-button {
-  padding: 15px;
-  border: 3px solid #ffffff;
+  padding: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
 }
 .dropdown .dropdown-button:hover {
@@ -54,18 +56,24 @@
   display: flex;
   justify-content: center;
   padding-top: 60px;
+  background: white;
 }
 .tabs .tabs-item {
   display: none;
   width: 75%;
 }
 .tabs .tabs-item .tabs-item-title {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 3.4rem;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  color: #484545;
   padding-bottom: 10px;
 }
 .tabs .tabs-item-selected {
   display: block;
+}
+.tabs .tabs-item-selected .tabs-item-description {
+  font-size: 1.8rem;
 }
 .tabs .tabs-links {
   display: flex;
@@ -73,7 +81,9 @@
 }
 .tabs .tabs-link {
   padding: 20px 25px;
-  font-size: 24px;
+  font-size: 3.4rem;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
   background-color: #931d25;
   border-right: 1px solid white;
   color: #ffffff;
@@ -85,6 +95,9 @@
 .tabs .tabs-link-selected {
   z-index: 2;
   border-right: 1px solid #931d25;
+  font-size: 3.4rem;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
   background-color: #ffffff;
   color: black;
 }
@@ -95,6 +108,8 @@ body {
   box-sizing: border-box;
   min-width: 300px;
   margin: 0;
+  font-family: 'Open Sans', 'sans-serif';
+  background-color: #f4f4f4;
 }
 .header-container {
   width: 100%;
@@ -112,16 +127,21 @@ body {
   width: 70%;
   margin: 45px auto;
   display: flex;
-  border: 1px solid #931d25;
-  box-shadow: 1px 1px 5px #931d25;
+  box-shadow: 1px 1px 5px #d0d0d0;
   border-radius: 10px;
   overflow: hidden;
+  background: white;
 }
 .section .box {
   padding: 40px;
 }
 .section .box .box-title {
-  font-size: 24px;
+  font-size: 3.4rem;
   padding-bottom: 10px;
-  font-weight: bold;
+  font-weight: 700;
+  font-family: 'Rubik', serif;
+  color: #484545;
+}
+.section .box .box-description {
+  font-size: 1.8rem;
 }

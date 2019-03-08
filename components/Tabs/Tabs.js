@@ -2,12 +2,11 @@ class TabLink {
   constructor(element) {
     // Assign this.element to the passed in DOM element
     this.element = element;
-
     // Get the custom data attribute on the Link
     this.data = this.element.dataset.tab;
     // Using the custom data attribute get the associated Item element
     this.itemElement = document.querySelector(
-      `.tabs-item[data-tab= '${this.element.dataset.tab}']`
+      `.tabs-item[data-tab='${this.data}']`
     );
     // Using the Item element, create a new instance of the TabItem class
     this.itemElement = new TabItem(this.itemElement);
@@ -19,7 +18,7 @@ class TabLink {
     // Get all of the elements with the tabs-link class
     const links = document.querySelectorAll('.tabs-link');
     // Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
-    let newLinks = Array.from(links).forEach(link =>
+    Array.from(links).forEach(link =>
       link.classList.remove('tabs-link-selected')
     );
     // Add a class named "tabs-link-selected" to this link
@@ -39,7 +38,7 @@ class TabItem {
     // Select all ".tabs-item" elements from the DOM
     const items = document.querySelectorAll('.tabs-item');
     // Remove the class "tabs-item-selected" from each element
-    let newItems = Array.from(items).forEach(item =>
+    Array.from(items).forEach(item =>
       item.classList.remove('tabs-item-selected')
     );
     // Add a class named "tabs-item-selected" to this element
@@ -71,3 +70,17 @@ class TabItem {
 const links = document
   .querySelectorAll('.tabs-link')
   .forEach(link => new TabLink(link));
+
+const tabs = document.querySelector('.tabs');
+tabs = new Tabs(tabs);
+
+/*
+    STRETCH GOAL
+    Create a Single Tabs component that creates all instances of TabLink. It will also hold the currently selected tab.
+    Add a deselect method to each the TabItem and TabLink classes. This will deselect that specific tab.
+    Remove the code deselecting all TabLinks and TabItems, only relying on the deselect method.
+    Tabs should deselect the currently selected tab each time a new tab is selected.
+
+
+Remove the boxes on the top card and replace them with an image carousel. This will have to be done from scratch, and should be pretty difficult, but it uses the same techniques as the Tabs component. Give it a left and right button, and a number of images that scroll as the buttons are pressed.
+  */
